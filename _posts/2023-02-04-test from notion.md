@@ -1,10 +1,10 @@
 # 그리스인 조르바
 
-Author: http://www.yes24.com/Product/Search?domain=ALL&query=%EB%8B%88%EC%BD%94%EC%8A%A4%20%EC%B9%B4%EC%9E%94%EC%B0%A8%ED%82%A4%EC%8A%A4&authorNo=526&author=%EB%8B%88%EC%BD%94%EC%8A%A4%20%EC%B9%B4%EC%9E%94%EC%B0%A8%ED%82%A4%EC%8A%A4
+Author: 
 Genre: 소설
 Started: 2023년 1월 30일
 Status: Reading Now
-cover: %E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%8C%E1%85%A9%E1%84%85%E1%85%B3%E1%84%87%E1%85%A1%20624f3680e69e4726bc9fdd117ca709e0/20230131_222824.jpg
+cover: 
 발행일: 2009/12/20
 쪽: 154 / 685
 출판사: 열린책들

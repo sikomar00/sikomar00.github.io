@@ -1,0 +1,48 @@
+---
+layout: single
+title:  "D-1: print"
+excerpt: "md 파일에 마크다운 문법으로 작성하여 Github 원격 저장소에 업로드 해보자. 에디터는 Visual Studio code 사용! 로컬 서버에서 확인도 해보자. "
+
+categories: python
+tags: [python, udemy, dr.angela]
+toc: true
+toc_sticky: true
+ 
+date: 2022-03-08
+# last_modified_at: 2020-05-25
+---
+# 문제: 다음과 같이 출력되도록 코드짜기
+
+
+ Day 1 - Python Print Function
+ The function is declared like this:
+ print('what to print')
+
+## answer-A
+```python
+#  \n 으로 줄바꿈 처리하여 한 번에
+print("Day 1 - Python Print Function\nThe function is declared like this:\nprint('what to print')")
+```
+
+## answer-B
+```python
+print("Day 1 - Python Print Function")
+print("The function is declared like this:")
+print("print('what to print')") #
+```
+
+## "" 대신 ''을 쓴 이유?
+   print("print("what to print")")
+      문자열   /  코드      / 문자열
+
+
+# 문자열 결합
+```python
+print("Hello, " + "Omar")
+```
+
+
+<!-- ```python
+``` -->
+
+

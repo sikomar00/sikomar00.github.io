@@ -1,14 +1,19 @@
 ---
 layout: single
-title:  "[100 Days python] D-2: DataType"
-excerpt: "Day 1 - Python Print Function\nThe function is declared like this:\nprint("
+title: "[100 Days python] D-2: DataType"
+excerpt: "print(Hello [2])  >> l: 대괄호 숫자 번쨰에 있는 철자 선택. 첫번째는 0번째 자리 [0] >> H"
 
 categories: python
-tags: [python, udemy, dr.angela]
+tags:
+  - python
+  - udemy
+  - dr.angela
 toc: true
 toc_sticky: true
- 
+
 date: 2022-03-09
+slug: "[100-days-python]-2-datatype"
+
 # last_modified_at: 2020-05-25
 ---
 
@@ -43,8 +48,11 @@ False
 ## 1-1. quiz
 ```python
 street_name = "Abbey Road"
-print(street_name[4] + street_name[7])  # yo : "" 할당된 변수값에 적용. ""내에선 공백도 문자열 취급
+print(street_name[4] + street_name[7])  
+# yo : "" 할당된 변수값에 적용. ""내에선 **공백도 문자열** 취급
 ```
+
+<br>
 
 # 형식오류와 형 확인/변환
 ```python

@@ -40,13 +40,13 @@ False
 ```
 
 
-# quiz
+## 1-1. quiz
 ```python
 street_name = "Abbey Road"
 print(street_name[4] + street_name[7])  # yo : "" 할당된 변수값에 적용. ""내에선 공백도 문자열 취급
 ```
 
-# 형식오류와 형 확인/번환
+# 형식오류와 형 확인/변환
 ```python
 num_char = len(input("What's your name? "))
 #   print("Your name has" + num_char + " cahracters.") >>> TypeError: can only concatenate str (not "int") to str  문자열끼리만 엮기 가능

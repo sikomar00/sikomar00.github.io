@@ -19,27 +19,18 @@ slug: "[100-days-python]-2-datatype"
 
 <br>
 
-# 1. DType
+# 1. Data Type
 ```python
 # String
-print("Hello" [2])  
-# >> l: 대괄호 숫자 번쨰에 있는 철자 선택. 첫번째는 0번째 자리 [0] >> H
-
-print("123" + "345")  
-# 123345
-# "" 안에 있으므로 문자열 취급. / +는 연산에선 덧셈, 문자열에선 결합
-
+print("Hello" [2])  # >> l: 대괄호 숫자 [n]번째 철자 선택. 첫번째는 0번째 자리 [0] >> H
+print("123" + "345")  # 123345 / "" 안에 있으므로 문자열 취급.
 
 # integer
 print(123 + 456) #579
 
-
 # float
-3.14159
 mystery = 734_529.678
-print(mystery)  
-# 734529.678 : _ 은 큰 수를 쉽게 읽기 위한 용도일뿐, 프로그램에선 무시함.
-
+print(mystery) #734529.678 : _ 은 큰 수를 쉽게 읽기 위한 용도일뿐, 프로그램에선 무시함.
 
 # boolean
 True
@@ -48,56 +39,52 @@ False
 
 ## 1-1. quiz
 ```python
-street_name = "Abbey Road"
-print(street_name[4] + street_name[7])  
+street_name = "Abbey Road" 일 때,
+print(street_name[4] + street_name[7]) ??
 ```
-yo : street_name에 할당된 변수값(Abbey Road)에 적용. ""내에선 **공백도 문자열** 취급: 공백의 자리값은 **[5]**
-
+***>>> yo*** 
+street_name에 할당된 변수값(Abbey Road)에 적용. ""내에선 **공백도 문자열** 취급: 공백의 자리값은 **[5]**
 <br>
-<br>
-
 # 2. 형식오류와 형 확인/변환
+
 ```python
 num_char = len(input("What's your name? "))
 ```
 입력한 이름의 철자 길이를 num_char에 할당
 
-## 2-1. 형식오류
+## 2-1. 형식오류, 타입확인, 변환(casting)
 
 ```python
+# 형식오류
 print("Your name has" + num_char + " cahracters.") 
-문자열 + 정수값변수 + 문자열
-```
-TypeError: can only concatenate str (not "int") to str <br>>> 문자열끼리만 엮기 가능
+                문자열 + 정수값변수int + 문자열
+# TypeError: can only concatenate str (not "int") to str
+# >>> 문자열끼리만 엮기 가능 > 타입 변환 필요
 
-## 2-2. 타입확인
-```python
+# 타입확인: type()
 print(type(num_char))  # int
-```
-type: 괄호 안 데이터의 타입을 알려줌
 
-## 2-3. casting, 데이터 형 변환
-```python
-new_num_char = str(num_char)
+# 변환(casting)
+new_num_char = str(num_char) 
+#정수값 num_char를 문자열로 변환 > new_num_char에 할당
 print("Your name has " + new_num_char + " cahracters.")
 ```
-정수값인 num_char를 문자열로 변환하여 new_num_char에 할당
-### 2-3-1. int > float
+
+## 2-2. int > float
 ```python
-a = float(123)
+a = float(123) # 123.0
 
 print(70 + float("100.5"))  # 170.5
-print(str(70) + str(100))  # 70100
+print(str(70) + str(100))  # 70100 : 70|100 문자열 그대로 이어줌.
 ```
 <br>
 
 # 3. 두 자리 정수의 각 자릿값을 더해주는 함수
 ```python
 two_digit_number = input("Type a two digit number: ") 
-
 print(int(two_digit_number[0] + two_digit_number[1]))
+# 자리별 값의 합 X: 각 자리별 두 문자열이 순서대로 합쳐진 다음, 정수형으로 변환되어 나옴. 14) 5가 아닌 "1" + "4" > 14
 ```
-
 ## 3-1. answer-A
 ```python
 print(int(two_digit_number[0] + two_digit_number[1]))
@@ -109,15 +96,24 @@ second_digit = two_digit_number[1]
 result = int(first_digit) + int(second_digit)
 print(result)
 ```
+## 3-?
+```python
+number = int(input("2 digits num? \n"))
+print(type(number))
+print(number[0] + number[1])
+```
 <br>
 
 # 4. Operator
 ```python
-print(6 / 3)  # 2.0 나누기는 늘 부동소수 형태도 표현됨.
+print(6 / 3)  
 print(2**8)
 ```
+***2.0*** : 나누기는 늘 부동소수 형태도 표현됨.
+***256***
 
-# 5. BMI Calculator
+
+# 5. BMI Calculator: 몸무게 % 키2제곱
 ```python
 height = input("enter your height in m: ")  # m로 입력 !!!
 weight = input("enter your weight in kg: ")
@@ -132,22 +128,22 @@ BMI = float(weight) / float(height)**2
 print("Your BMI is " + str(BMI))
 ``` 
 float(height): m단위이므로, float 변환 해주지 않으면, 1m, 2m --- 로 소수점 자리를 표현 할 수 없어짐.
-
 이 상태로 출력하면 소수점 아래로 값이 길게 나오므로, 정수형으로 변환
 
 ```python
 BMI_as_int = int(BMI)
 print(BMI_as_int)
 ``` 
-
 <br>
 
 # 6. 올/내림 & F-string
 ```python
 # 반올림 round()
 print(round(8 / 3))  # 2.666... > 3
+
 # 자릿수 지정 반올림 round(수식, 지정자릿수)
 print(round(8 / 3, 2))  # 2.666... > 2.67
+
 # 버림 //
 print(8 // 3)  # 2
 
@@ -159,19 +155,26 @@ print(result)   # 1.0
 
 ## 6-1. F-string
 ```python
+score = 12
 height = 1.8
 isWinning = True
-
 print(
     f"your score is {score}, your height is {height}, you are winning is {isWinning}")
+
+#print(f"your name has {len(input("name? "))} letters!")
 ``` 
 F-string: 문자열과 타 데이터타입 혼합
+f-string: unmatched '('
 
 <br>
 
 # 7. 인생 남은 시간
+Create a program using maths and f-Strings that tells us how many days, weeks, months we have left if we live until 90 years old.
 ```python
 age = input("What is your current age? ")
+
+# Example Output
+# You have 12410 days, 1768 weeks, and 408 months left.
 ``` 
 
 ```python

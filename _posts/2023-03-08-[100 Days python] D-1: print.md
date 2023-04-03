@@ -43,40 +43,52 @@ print("print("what to print")") <br>
 print("Hello, " + "Omar") #  Hello, Omar
 print("Hello," * 3)  # Hello,Hello,Hello,
 ```
-<br>
-
-# 3. 입력함수
+## 2-1. 입력함수: Hello, (내이름)!
 ```python
 print("Hello " + input("What is your name? "))
 ```
 
-## 3-1. 입력한 이름의 글자수를 프린트 해주는 함수
+## 2-2. 입력한 이름의 글자수를 프린트 해주는 함수: len
 ```python
+A=====================================================
 name_length = len(input("What is your name? "))
 print(name_length)
 print(len(input("What is your name? ")))
+B=======================================================
+name = input("you name?")
+print(f"your name has " + str(len(name)) + " letters!")
+C=======================================================
+print(f"your name has " + str(len(input("name? "))) + " letters!")
 ```
 
-# 4. 변수
+# 3. 변수
 ```python
 name = input("What is your name? ")
 leng = len(name)
 print(leng)
 ```
 <br>
-Write a program that switches the values stored in the variables a and b.
 
+## 3-1. 변수 a, b 저장값을 치환하는 프로그램 짜기
 ```python
+Write a program that switches the values stored in the variables a and b.
 #🚨 Don't change the code below 👇
 a = input("a: ")
 b = input("b: ")
 # 🚨 Don't change the code above 👆
-c = a  # 오른쪽의 값을 왼쪽에 넣는다.
-a = b
-b = c
+
+# 이 사이 어떤 코드가 들어가야 할까?
+
 # 🚨 Don't change the code below 👇
 print("a: " + a)
 print("b: " + b)
+```
+
+### 3-1-1. answer
+```python
+c = a
+a = b
+b = c
 ```
 
 # 5. Band Name Generator
@@ -88,12 +100,19 @@ print("b: " + b)
 5. Make sure the input cursor shows on a new line:
    
 ```python
+A=====================================================
 print("Hello! I'm Band Name Generator!\nplease respond the following questions to make Band Name.")
 
 city = input("In which city you grew up? \n")  
 # 줄바꿈은 큰따옴표 안에 있어야 함
 pet_name = input("What's the name of your pet? \n")
 print("Your Band Name is " + city + " " + pet_name)
+
+B=====================================================
+print("welcome!")
+print(f"Your Band name is " +
+      input("in which city do u live?\n") + " " + input(" your pet name?\n")+"s!!!")
+      
 ```
 <!-- <details>
 <summary>접기/펼치기 버튼</summary>

@@ -47,5 +47,12 @@
         }
       ]
     }
+  ],
+  "frontMatter.content.autoUpdateDate": true,
+  "frontMatter.taxonomy.tags": [
+    "Git",
+    "dr.angela",
+    "python",
+    "udemy"
   ]
 }

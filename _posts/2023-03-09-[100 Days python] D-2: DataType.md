@@ -1,17 +1,18 @@
 ---
 layout: single
 title: "[100 Days python] D-2: DataType"
-excerpt: "print(Hello [2])  >> l: 대괄호 숫자 번쨰에 있는 철자 선택. 첫번째는 0번째 자리 [0] >> H"
+excerpt: type, 형식오류, 캐스스티팅, 각 자릿값 더하기, 연산자자, bmi calc, 올/내림, 남은인생, 팁calc
 
 categories: python
 tags:
+  - dr.angela
   - python
   - udemy
-  - dr.angela
+  - type
 toc: true
 toc_sticky: true
 
-date: 2022-03-09
+date: 2023-03-08T23:30:05.000Z
 slug: "[100-days-python]-2-datatype"
 
 # last_modified_at: 2020-05-25
@@ -23,7 +24,7 @@ slug: "[100-days-python]-2-datatype"
 ```python
 # String
 print("Hello" [2])  # >> l: 대괄호 숫자 [n]번째 철자 선택. 첫번째는 0번째 자리 [0] >> H
-print("123" + "345")  # 123345 / "" 안에 있으므로 문자열 취급.
+print("123" + "345")  # 123345 / "" 안에 있으므로, 정수가 아닌 문자열 취급.
 
 # integer
 print(123 + 456) #579
@@ -42,15 +43,17 @@ False
 street_name = "Abbey Road" 일 때,
 print(street_name[4] + street_name[7]) ??
 ```
-***>>> yo*** 
-street_name에 할당된 변수값(Abbey Road)에 적용. ""내에선 **공백도 문자열** 취급: 공백의 자리값은 **[5]**
+**>>> yo** <br>
+street_name에 할당된 변수값(Abbey Road)에 적용. " "내에선 **공백도 문자열** 취급: 공백의 자리값은 **[5]**
+
 <br>
+
 # 2. 형식오류와 형 확인/변환
 
 ```python
 num_char = len(input("What's your name? "))
 ```
-입력한 이름의 철자 길이를 num_char에 할당
+입력한 이름의 철자 길이를 num_char에 할당: int 타입
 
 ## 2-1. 형식오류, 타입확인, 변환(casting)
 
@@ -80,28 +83,32 @@ print(str(70) + str(100))  # 70100 : 70|100 문자열 그대로 이어줌.
 <br>
 
 # 3. 두 자리 정수의 각 자릿값을 더해주는 함수
+Write a program that adds the digits in a 2 digit number. e.g. if the input was 35, then the output should be 3 + 5 = 8
 ```python
 two_digit_number = input("Type a two digit number: ") 
-print(int(two_digit_number[0] + two_digit_number[1]))
-# 자리별 값의 합 X: 각 자리별 두 문자열이 순서대로 합쳐진 다음, 정수형으로 변환되어 나옴. 14) 5가 아닌 "1" + "4" > 14
 ```
 ## 3-1. answer-A
 ```python
+A========================================
+print(int(two_digit_number[0]) + int(two_digit_number[1]))
+
+A-1?========================================
 print(int(two_digit_number[0] + two_digit_number[1]))
-```
-## 3-1. answer-B
-```python
+
+B: 자릿값 별 변수 적용======================
 first_digit = two_digit_number[0]
 second_digit = two_digit_number[1]
 result = int(first_digit) + int(second_digit)
 print(result)
-```
-## 3-?
-```python
+
+C========================================
 number = int(input("2 digits num? \n"))
 print(type(number))
 print(number[0] + number[1])
 ```
+
+A-1: 자리별 값의 합 아님: 각 자리별 두 (숫자형태의) "문자열"이 순서대로 합쳐진 다음(int + int가 아닌, str + str), 정수형으로 변환. <br>
+*14) 1 + 4 => 5가 아닌 "1" + "4" => 14*
 <br>
 
 # 4. Operator
@@ -109,28 +116,26 @@ print(number[0] + number[1])
 print(6 / 3)  
 print(2**8)
 ```
-***2.0*** : 나누기는 늘 부동소수 형태도 표현됨.
+***2.0*** : 나누기는 늘 부동소수 형태도 표현됨. <br>
 ***256***
+<br>
 
+# 5. BMI Calculator
+> Write a program that calculates the Body Mass Index (BMI) from a user's weight and height. <br> The BMI is calculated by dividing a person's weight (in kg) by the square 제곱 of their height (in m): <br> **Warning** you should convert the result to a whole number.
 
-# 5. BMI Calculator: 몸무게 % 키2제곱
 ```python
 height = input("enter your height in m: ")  # m로 입력 !!!
 weight = input("enter your weight in kg: ")
 ``` 
-
+## 5-1. answer
 ```python
-print(type(height))
-print(type(weight))
+# print(type(height))
+# print(type(weight)) >> input(입력함수)로부터 받는 값은 문자열
 
 BMI = float(weight) / float(height)**2
+print(f"Your BMI is {BMI}")
 
-print("Your BMI is " + str(BMI))
-``` 
-float(height): m단위이므로, float 변환 해주지 않으면, 1m, 2m --- 로 소수점 자리를 표현 할 수 없어짐.
-이 상태로 출력하면 소수점 아래로 값이 길게 나오므로, 정수형으로 변환
-
-```python
+# 소수점 너무 기니까 정수형으로 치환
 BMI_as_int = int(BMI)
 print(BMI_as_int)
 ``` 
@@ -161,23 +166,29 @@ isWinning = True
 print(
     f"your score is {score}, your height is {height}, you are winning is {isWinning}")
 
-#print(f"your name has {len(input("name? "))} letters!")
+print(f"your name has {len(input("name? "))} letters!") 
+# f-string: unmatched '('
 ``` 
 F-string: 문자열과 타 데이터타입 혼합
-f-string: unmatched '('
 
 <br>
 
 # 7. 인생 남은 시간
-Create a program using maths and f-Strings that tells us how many days, weeks, months we have left if we live until 90 years old.
+> Create a program using maths and f-Strings that tells us how many days, weeks, months we have left if we live until 90 years old.
+> 
+> **Example Output** <br> You have 12410 days, 1768 weeks, and 408 months left.
+> 
+> **Warning** <br> your output should match the Example Output format exactly, even the positions of the commas and full stops.
+
 ```python
 age = input("What is your current age? ")
-
-# Example Output
-# You have 12410 days, 1768 weeks, and 408 months left.
 ``` 
+<br>
 
+## 7-1. Answer
 ```python
+age_as_int = int(age)
+
 days_remaining = (90 - age_as_int) * 365
 weeks_remaining = (90 - age_as_int) * 52
 months_remaining = (90 - age_as_int) * 12
@@ -189,6 +200,24 @@ print(message)
 <br>
 
 # 8. tip calculator
+> If the bill was $150.00, split between 5 people, with 12% tip. <br> Each person should pay (150.00 / 5) * 1.12 = 33.6 <br> 
+> Format the result to 2 decimal places = 33.60 <br> 
+> Thus everyone's share of the total bill is $30.00 plus a $3.60 tip. <br> 
+> 
+> **Tip**: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
+> 
+> **Example Input** <br> 
+> Welcome to the tip calculator! <br> 
+>What was the total bill? ***$124.56*** <br> 
+>How much tip would you like to give? 10, 12, or 15?  ***12*** <br> 
+>How many people to split the bill? ***7***
+>
+> **Example Output** <br> You have 12410 days, 1768 weeks, and 408 months left.
+> 
+> **Warning** <br> your output should match the Example Output format exactly, even the positions of the commas and full stops.
+
+## 8-1. Answer
+
 ```python
 print("Welcome to the tip calculator.")
 bill = float(input("What was the total bill? $"))
@@ -200,13 +229,12 @@ total_tip_amount = bill * tip_as_percent
 total_bill = bill + total_tip_amount
 bill_per_person = total_bill / people
 
-# final_amount = round(bill_per_person, 2)  # 
+# final_amount = round(bill_per_person, 2)
 final_amount = "{:.2f}".format(bill_per_person)
-
 
 print(f"Each person should pay: ${final_amount}")
 ``` 
-
+<br> 
  <details>
 <summary>소수점 2번쨰 0까지 표시되는 방법??</summary>
 <div markdown="1">
@@ -219,6 +247,8 @@ format함수를 쓰고 그 다음에 변수를 적어줍니다. <br>
 </div>
 </details> 
 
+<br> 
+<br> 
 
 <!-- 
 <br>

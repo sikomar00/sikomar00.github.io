@@ -1,14 +1,19 @@
 ---
 layout: single
-title:  "[100 Days python] D-1: print"
-excerpt: "Day 1 - Python Print Function\nThe function is declared like this:\nprint("
+title: "[100 Days python] D-1: print"
+excerpt: print, 문자열연산출력, len, variable, band name generator
 
 categories: python
-tags: [python, udemy, dr.angela]
+tags:
+  - dr.angela
+  - python
+  - udemy
+  - print
 toc: true
 toc_sticky: true
- 
+
 date: 2022-03-08
+
 # last_modified_at: 2020-05-25
 ---
 
@@ -38,9 +43,12 @@ print("print("what to print")") <br>
 
 <br>
 
-# 2. 문자열 결합
+# 2. 문자열 연산
 ```python
+#문자열 더하기
 print("Hello, " + "Omar") #  Hello, Omar
+
+#문자열 곱하기
 print("Hello," * 3)  # Hello,Hello,Hello,
 ```
 ## 2-1. 입력함수: Hello, (내이름)!
@@ -54,12 +62,15 @@ A=====================================================
 name_length = len(input("What is your name? "))
 print(name_length)
 print(len(input("What is your name? ")))
+
 B=======================================================
 name = input("you name?")
 print(f"your name has " + str(len(name)) + " letters!")
+
 C=======================================================
 print(f"your name has " + str(len(input("name? "))) + " letters!")
 ```
+<br>
 
 # 3. 변수
 ```python
@@ -67,11 +78,9 @@ name = input("What is your name? ")
 leng = len(name)
 print(leng)
 ```
-<br>
-
 ## 3-1. 변수 a, b 저장값을 치환하는 프로그램 짜기
-```python
 Write a program that switches the values stored in the variables a and b.
+```python
 #🚨 Don't change the code below 👇
 a = input("a: ")
 b = input("b: ")
@@ -90,9 +99,9 @@ c = a
 a = b
 b = c
 ```
+<br>
 
 # 5. Band Name Generator
-
 1. Create a greeting for your program.
 2. Ask the user for the city that they grew up in.
 3. Ask the user for the name of a pet.

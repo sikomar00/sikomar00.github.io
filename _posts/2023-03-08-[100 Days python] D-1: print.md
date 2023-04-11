@@ -31,16 +31,18 @@ print("Day 1 - Python Print Function\nThe function is declared like this:\nprint
 ## 1-2. answer-B: print 분절
 ```python
 print("Day 1 - Python Print Function")
-print("The function is declared like this:")
-print("print('what to print')") #
+print("The function is **declared** like this:")
+print("print('what to print')") @@@
 ```
 
-### 1-@. "" 대신 ''을 쓴 이유?
-print("print("what to print")") <br> 
-문자열: print( / <b>코드: what to print</b> / 문자열: ) 
-<br>
+### 1-@@@. " " 대신 ' '을 쓴 이유?
+" " 겹사용 하는 경우)
+```
+print("print("what to print")")
+what to print 를 코드로,
+" 사이에 있는 print와 )가 문자열로 인식됨.
+``` 
 따옴표 내에 같은 따옴표를 쓰면 그 사이를 문자열 혹은 코드로 인식함
-
 <br>
 
 # 2. 문자열 연산

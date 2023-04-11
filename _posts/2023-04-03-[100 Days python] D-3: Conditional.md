@@ -166,10 +166,11 @@ else:
 > Write a program that works out whether if a given year is a leap year. A normal year has 365 days, leap years have 366, with an extra day in February. The reason why we have leap years is really fascinating, <br>
 > 
 > This is how you work out whether if a particular year is a leap year. 
+> 
 > <br>
-> on every year that is evenly divisible by 4 <br>
-> **except**) every year that is evenly divisible by 100 <br>
-> **unless**) the year is also evenly divisible by 400 <br>
+>> on every year that is evenly divisible by 4 <br>
+>>>**except** every year that is evenly divisible by 100
+>>>>**unless** the year is also evenly divisible by 400<br>
 >
 >e.g. <br> 
 >The year 2000: <br>
@@ -208,8 +209,10 @@ if year % 4 == 0:
 else:
     print(f"{year} is not leap year")
 ```
+<br>
 
-# 2. Multiple continuous if
+# 2. Multiple continuous if(다중 연속 if문): RollerCoaster cost
+
 ```python
 height = float(input("What is your height in cm? "))
 bill = 0
@@ -245,14 +248,110 @@ else:
 >Small Pizza: $15<br>
 >Medium Pizza: $20<br>
 >Large Pizza: $25<br>
-
+>
 >Pepperoni for Small Pizza: +$2<br>
 >Pepperoni for Medium or Large Pizza: +$3<br>
 >Extra cheese for any size pizza: + $1<br>
-
+>
 > Example Input / Output<br>
 >size = "L"<br>
 >add_pepperoni = "Y"<br>
 >extra_cheese = "N"<br>
 >
 >Your final bill is: $28.<br>
+
+```python
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M, or L \n")
+add_pepperoni = input("Do you want pepperoni? Y or N \n")
+extra_cheese = input("Do you want extra cheese? Y or N \n")
+```
+<br>
+
+```python
+bill = 0
+
+if size == "S":  # str 형식 지켜주기
+    bill += 15
+elif size == "M":
+    bill += 20
+else:
+    bill += 25
+
+if add_pepperoni == "Y":
+    if size == "S":
+        bill += 2
+    else:
+        bill += 3
+
+if extra_cheese == "Y":
+    bill += 1
+
+
+print(f"Your final is: ${bill}")
+```
+
+
+## 2-2. Love Calc
+>You are going to write a program that tests the compatibility between two people.
+>To work out the love score between two people:
+>
+>Take both people's names and check for the number of times the letters in the word TRUE occurs. Then check for the number of times the letters in the word LOVE occurs. Then combine these numbers to make a 2 digit number.
+>
+>For Love Scores <span style="color: red">**less than 10** or **greater than 90**</span>, the message should be:
+>"Your score is <span style="color: red">X</span>, you go together like coke and mentos."
+>
+>For Love Scores <span style="color: yellow">**between 40** and **50**</span>, the message should be:
+>"Your score is <span style="color: yellow">y</span>, you are alright together."
+>
+>Otherwise, the message will just be their score. e.g.:
+>"Your score is <span style="color: green">z</span>."
+>
+>e.g. <br>
+>name1 = "Angela Yu" <br>
+>name2 = "Jack Bauer"<br>
+>
+>T occurs 0 times<br>
+>R occurs 1 time<br>
+>U occurs 2 times<br>
+>E occurs 2 times<br>
+>Total = 5<br>
+>
+>L occurs 1 time<br>
+>O occurs 0 times<br>
+>V occurs 0 times<br>
+>E occurs 2 times<br>
+>Total = 3<br>
+>
+>Love Score = 53<br>
+>Print: "Your score is 53."<br>
+>=========================<br>
+> Example Input 1<br>
+>name1 = "Kanye West"<br>
+>name2 = "Kim Kardashian"<br>
+>
+> Example Output 1<br>
+>Your score is 42, you are alright together.<br>
+>
+> Example Input 2<br>
+>name1 = "Brad Pitt"<br>
+>name2 = "Jennifer Aniston"<br>
+>
+> Example Output 2<br>
+>Your score is 73.<br>
+>
+>The testing code will check for print output that is formatted like one of the lines below:
+```
+"Your score is 47, you are alright together."
+"Your score is 125, you go together like coke and mentos."
+"Your score is 54."
+```
+
+<br>
+
+***Starter!***
+```python
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+```

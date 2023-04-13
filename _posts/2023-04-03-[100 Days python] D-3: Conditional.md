@@ -19,6 +19,7 @@ date: 2023-04-03T02:56:50.782Z
 # 1.흐름제어: if / else / 조건연산자 
 
 ## water level  >  drain? continue?
+water_level이 80 초과면 "Drain Water", 그렇지 않으면 "Continue"를 출력
 ```python
 water_level = 80
 if water_level > 80:
@@ -212,6 +213,8 @@ else:
 <br>
 
 # 2. Multiple continuous if(다중 연속 if문): RollerCoaster cost
+다수의 조건이 있어, 먼저 확인한 조건이 참이어도 여러 조건을 확인해야 하는 상황<br>
+이전까진, 첫 조건이 참이어야, 그에 소속된 조건이 의미가 있었음.
 
 ```python
 height = float(input("What is your height in cm? "))
@@ -239,7 +242,6 @@ if height >= 120:
 
 else:
     print("go home")
-
 ```
 
 ## 2-1. Pizza Order
@@ -307,6 +309,13 @@ print(f"Your final is: ${bill}")
 >Otherwise, the message will just be their score. e.g.:
 >"Your score is <span style="color: green">z</span>."
 >
+>> **Use them** <br>
+>> **.lower()**  <br>"Angela".lower() : ***angela*** <br>
+>>
+>> **.count()**  <br>"Angela".count("a") : ***1*** <br>
+>>> lowercase_name = "Angela".lower() <br>
+>>> lowercase_name.count("a") : ***2***
+>
 >e.g. <br>
 >name1 = "Angela Yu" <br>
 >name2 = "Jack Bauer"<br>
@@ -346,12 +355,118 @@ print(f"Your final is: ${bill}")
 "Your score is 125, you go together like coke and mentos."
 "Your score is 54."
 ```
-
 <br>
 
-***Starter!***
+***Starting Code***
 ```python
 print("Welcome to the Love Calculator!")
 name1 = input("What is your name? \n")
 name2 = input("What is their name? \n")
+```
+<br>
+
+```python
+total_name = name1 + name2
+
+name1_lowcase = total_name.lower()
+
+t = total_name.count("t")
+r = total_name.count("r")
+u = total_name.count("u")
+e = total_name.count("e")
+true = t + r + u + e
+
+l = total_name.count("l")
+o = total_name.count("o")
+v = total_name.count("v")
+e = total_name.count("e")
+love = l + o + v + e
+
+Love_Score = int(str(total_of_true) + str(total_of_love))
+
+if Love_Score > 90 or 10 < Love_Score:
+    print(
+        f"Your Love Score is {Love_Score}, you go together like coke and mentos.")
+elif 40 <= Love_Score <= 50:
+    print(
+        f"Your Love Score is {Love_Score}, you are alright together.")
+else:
+    print(f"Your Love Score is {Love_Score}.")
+```
+<br>
+
+***
+
+# 3. Treasure Island
+
+> Make your own "Choose Your Own Adventure" game. Use conditionals such as `if `, `else `, and `elif ` statements to lay out the logic and the story's path in your program.
+> 
+> Text Snippets from my example
+> 
+>  'You\'re at a crossroad. Where do you want to go? Type "left" or "right"'<br>
+>  'You\'ve come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across.'<br>
+>  "You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose?"<br>
+>  "It\'s a room full of fire. Game Over."<br>
+>  "You found the treasure! You Win!"<br>
+>  "You enter a room of beasts. Game Over."<br>
+>  "You chose a door that doesn\'t exist. Game Over."<br>
+>  "You get attacked by an angry trout. Game Over."<br>
+>  "You fell into a hole. Game Over."<br>
+> <br>
+> Escaping Characters<br>
+> If you want to use multiple sets of quotes inside a single string, you might have to "escape" some of them using the backslash `\`. You can see this in my first sentence: 'You\'re at a crossroad...'.<br>
+> <br>
+> Extensions<br>
+> Have a think about how you might write your program to make a player's answers less case-sensitive. In other words, your code should work regardless of whether your user answers "left" or "Left".<br>
+
+<center> Starting Code </center>  
+
+```python
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.") 
+```
+<br>
+
+```python
+choice1 = input(
+    'You\'re at a crossroad. Where do you want to go? Type “left” or “right”\n').lower()
+if choice1 == "left":
+    choice2 = input(
+        'You\'ve come to a lake. There is an island in the middle of the lake. Type “wait” to wait for a boat. Type “swim” to swim across.\n').lower()
+    # choice2 == 가 아니라, choice2 =. 값을 할당해주는 의미
+    if choice2 == "wait":
+        choice3 = input(
+            "You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose?\n").lower()
+        if choice3 == "yellow":
+            print("You found the treasure! You Win!")
+        elif choice3 == "red":
+            print("You enter a room of beasts. Game Over.")
+        elif choice3 == "blue":
+            print("You chose a door that doesn\'t exist. Game Over.")
+    else:
+        print("You get attacked by an angry trout. Game Over.")
+else:
+    print("You fell into a hole. Game Over.")
 ```
